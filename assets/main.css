@@ -1,0 +1,14 @@
+.container{
+    text-align: left;
+}
+
+.form-list{
+    margin-bottom: 15px;
+}
+
+.results{display: none;}
+
+.active{display: block;}
+
+
+
