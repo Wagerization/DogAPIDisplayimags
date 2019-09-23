@@ -1,6 +1,7 @@
 function dogImage() {
   let number = $(".js-query").val();
-  fetch(`https://dog.ceo/api/breed/hound/images/random/${number}`)
+  let queryURL = "https://cors-anywhere.herokuapp.com/"
+  fetch(`${queryURL}https://dog.ceo/api/breed/hound/images/random/${number}`)
     .then(response => response.json())
     .then(responseJson => {
       for (i = 0; i < responseJson.message.length; i++) {
