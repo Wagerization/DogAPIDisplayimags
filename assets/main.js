@@ -8,7 +8,7 @@ function dogImage() {
 		$('.js-submit').on('click', event =>{
 			event.preventDefault();
 			$('.results').addClass('active');
-			$('.results').prepend(`<img  src="${responseJson.message}" />`);
+			$('.results').prepend(`<img  src='https://dog.ceo/api/breed/hound/images/random/${number}' />`);
 		});
 
 	  }
