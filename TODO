@@ -1,0 +1,9 @@
+
+Todo:
+☐ The number of dog images and search for breed shouldn't be connected.
+
+☐ If a user tries to make a search for a number outside the range of 1-50, they should hit client-side validation or receive an error message letting them know what they did wrong.
+
+☐ I should be able to search for a random number of dogs between 1-50 and get multiple "random" breeds back.
+
+☐ Similarly, I should be able to type into an input field to find the breed of my choice. If the breed is not found, I should receive an appropriate error message letting me know what went wrong.

@@ -1,8 +1,8 @@
 function dogImage() {
   let number = $(".js-query").val();
-  let breed = $(".dog-selector option:selected").val().replace("-","/");
-  var originalURL = `https://dog.ceo/api/breed/${breed}/images/random/${number}`;
-  var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL;
+  let breed = $(".dog-selector option:selected").val().replace("-", "/");
+  const originalURL = `https://dog.ceo/api/breed/${breed}/images/random/${number}`;
+  const queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL;
   fetch(queryURL)
     .then(response => response.json())
     .then(responseJson => {
@@ -17,17 +17,29 @@ function dogImage() {
 }
 
 function clickForm() {
-  $(".form-list").submit(event => {
+  $(".form-list-one ").submit(event => {
     event.preventDefault();
     dogImage();
   });
+}``
+
+function clickFormTwo(){
+  $('.form-list-two').submit(event => {
+    event.preventDefault();
+    dogImage();
+  })
 }
 
-$(".js-submit").click(event => {
+$(".js-submit-one").click(event => {
+  $(".js-results").empty();
+});
+
+$(".js-submit-two").click(event => {
   $(".js-results").empty();
 });
 
 $(function() {
   console.log("app loaded");
   clickForm();
+  clickFormTwo();
 });

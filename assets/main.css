@@ -2,7 +2,7 @@
     text-align: left;
 }
 
-.form-list{
+.form-list-one, .form-list-two{
     margin-bottom: 15px;
 }
 
@@ -13,6 +13,10 @@
 .images{
     padding: 10px;
     margin: 10px;
+    width: 520px;
+    height: 395px;
 }
 
-
+.bold{
+    font-weight: bold;
+}
