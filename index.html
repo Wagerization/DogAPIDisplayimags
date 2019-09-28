@@ -15,18 +15,17 @@
 
 
     <form class="form-list-one">
-      <p>Pick a number from 3-50 or don't pick anything and get 3 adorable dogs</p>
+      <p>Pick a number from 3-50 and get pictures of gitadorable dogs</p>
       <label for="query"></label>
-      <input required type="text-one" class="js-query" value="3">
+      <input required type="number" class="js-query" value="3" min="1" max="50">
       <button class="js-submit-one" type="submit">Search</button>
     </form>
-    
+
     <p class="bold">OR</p>
     
     <form class="form-list-two">
       <p>Chose from the list to select a bread you want to see</p>
       <label for="query"></label>
-      <input required type="text-two" class="js-query" value="3">
       <select class="dog-selector">
         <option value="affenpinscher">affenpinscher</option>
         <option value="african">african</option>
