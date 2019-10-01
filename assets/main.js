@@ -1,6 +1,5 @@
 function dogImageBreed() {
-  let number = $(".js-query").val();
-  let breed = $(".dog-selector option:selected").val().replace("-", "/");
+  let number = $(".js-query").val();  
   const originalURL = `https://dog.ceo/api/breed/hound/images/random/${number}`;
   const queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL;
   fetch(queryURL)
@@ -8,32 +7,28 @@ function dogImageBreed() {
     .then(responseJson => {
       for (i = 0; i < responseJson.message.length; i++) {
         console.log(responseJson.message[i]);
-        $(".results").addClass("active");
-        $(".results").prepend(
-          `<img  class="images" src="${responseJson.message[i]}" />`
-        );
+        $(".js-results").addClass("active");
+        $(".js-results").prepend(`<img  class="images" src="${responseJson.message[i]}" />`);
       }
     });
 }
 
 function dogImageNumber() {
-  let number = $(".js-query").val();
-  let breed = $(".dog-selector option:selected").val().replace("-", "/");
-  const originalURL = `https://dog.ceo/api/breed/${breed}/images/random/1`;
+  let breedInput = $('.breed').val();
+  const originalURL = `https://dog.ceo/api/breed/${breedInput}/images/random/1`;
   const queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL;
   fetch(queryURL)
     .then(response => response.json())
     .then(responseJson => {
-      for (i = 0; i < responseJson.message.length; i++) {
-        console.log(responseJson.message[i]);
-        $(".results").addClass("active");
-        $(".results").prepend(
-          `<img  class="images" src="${responseJson.message[i]}" />`
-        );
+      if (responseJson.status == "success"){
+        $(".js-results").addClass("active");
+        $(".js-results").prepend(`<img  class="images" src="${responseJson.message}" />`);
+        $('.wrongOne').addClass('results');
+      }else {
+        $('.wrongOne').addClass('active');
       }
     });
 }
-
 
 function clickForm() {
   $(".form-list-one ").submit(event => {
@@ -62,3 +57,8 @@ $(function() {
   clickForm();
   clickFormTwo();
 });
+
+
+// add later whe the logic works for the image to load
+// $(".results").addClass("active");
+// $(".results").prepend(`<img  class="images" src="${responseJson.message[i]}" />`);
